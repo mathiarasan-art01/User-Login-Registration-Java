@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+    version="4.0">
+
+    <!-- Default page -->
+    <welcome-file-list>
+        <welcome-file>login.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- Login Servlet -->
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.auth.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- Register Servlet -->
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>com.auth.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- Google Login (START OAuth) -->
+    <servlet>
+        <servlet-name>GoogleLogin</servlet-name>
+        <servlet-class>com.auth.servlet.GoogleLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GoogleLogin</servlet-name>
+        <url-pattern>/google-login</url-pattern>
+    </servlet-mapping>
+
+    <!-- ✅ Google CALLBACK (VERY IMPORTANT) -->
+<servlet>
+    <servlet-name>GoogleCallback</servlet-name>
+    <servlet-class>com.auth.servlet.GoogleCallbackServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>GoogleCallback</servlet-name>
+    <url-pattern>/google-callback</url-pattern>
+</servlet-mapping>
+
+    
+    
+    <!-- Logout Servlet -->
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>com.auth.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+</web-app>
